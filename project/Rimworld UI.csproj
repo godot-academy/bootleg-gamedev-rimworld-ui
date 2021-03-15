@@ -1,0 +1,11 @@
+<Project Sdk="Godot.NET.Sdk/3.2.3">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>RimworldUI</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GodotSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\bin\Godot_v3.2.3-stable_mono_win64\GodotSharp\Api\Debug\GodotSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
