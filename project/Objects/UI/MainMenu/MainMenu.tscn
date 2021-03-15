@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/UI/MainMenu/main_menu_background.png" type="Texture" id=1]
 [ext_resource path="res://Objects/UI/Common/icon_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Objects/UI/MainMenu/MainMenu.cs" type="Script" id=3]
+[ext_resource path="res://Objects/UI/MainGame/MainGameUI.tscn" type="PackedScene" id=4]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -11,6 +12,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+MainGame = ExtResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -34,34 +36,35 @@ __meta__ = {
 }
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MainContainer"]
-margin_right = 126.0
-margin_bottom = 134.0
+margin_right = 100.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PlayButton" type="Button" parent="MainContainer/ButtonContainer"]
-margin_right = 126.0
+margin_right = 100.0
 margin_bottom = 20.0
 text = "Play!"
 
 [node name="QuitButton" type="Button" parent="MainContainer/ButtonContainer"]
 margin_top = 24.0
-margin_right = 126.0
+margin_right = 100.0
 margin_bottom = 44.0
 text = "Quit"
 
 [node name="InfoContainer" type="VBoxContainer" parent="MainContainer"]
-margin_left = 130.0
-margin_right = 257.0
-margin_bottom = 134.0
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HomepageButton" type="Button" parent="MainContainer/InfoContainer"]
-margin_right = 127.0
+margin_right = 100.0
 margin_bottom = 20.0
 text = "Homepage"
 icon = ExtResource( 2 )
 expand_icon = true
+[connection signal="pressed" from="MainContainer/ButtonContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MainContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="MainContainer/InfoContainer/HomepageButton" to="." method="_on_HomepageButton_pressed"]
